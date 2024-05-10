@@ -1,5 +1,6 @@
 package id.hmd.itunesmovies.modules.myfav
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -125,6 +126,7 @@ class MyFavFragment : BaseFragment(), MyFavContract.View, MyFavListAdapter.OnIte
         })
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onSuccessGetMyFavList(myfavList: List<ResultsItem>) {
         if (!isLoadMore) {
             if (!listMyFav.isEmpty()) listMyFav.clear()
