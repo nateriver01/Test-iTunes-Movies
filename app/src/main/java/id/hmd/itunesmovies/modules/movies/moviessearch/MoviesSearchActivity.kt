@@ -20,7 +20,6 @@ import id.hmd.itunesmovies.base.BaseActivity
 import id.hmd.itunesmovies.databinding.ActivityMoviesSearchBinding
 import id.hmd.itunesmovies.model.response.ResultsItem
 import id.hmd.itunesmovies.modules.movies.moviesdetail.MoviesDetailActivity
-import id.hmd.itunesmovies.modules.movieslist.moviessearch.MoviesSearchContract
 import id.hmd.itunesmovies.utils.AppConstants
 import id.hmd.itunesmovies.utils.Helpers
 import id.hmd.itunesmovies.utils.changePage

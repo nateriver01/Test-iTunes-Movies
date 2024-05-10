@@ -1,3 +1,5 @@
+@file:Suppress("SameParameterValue")
+
 package id.hmd.itunesmovies.base
 
 import android.content.SharedPreferences
@@ -26,6 +28,7 @@ import javax.inject.Inject
  * Created by hmdrrhmn on 2019-09-23 at 15:39.
  */
 
+@Suppress("SameParameterValue")
 abstract class BaseFragment: Fragment(), BaseView{
 
     @Inject

@@ -1,3 +1,4 @@
+@file:Suppress("unused")
 package id.hmd.itunesmovies.utils
 
 import androidx.recyclerview.widget.GridLayoutManager
@@ -5,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
+@Suppress("unused")
 abstract class EndlessRecyclerViewScrollListener(private var visibleThreshold: Int = 2): RecyclerView.OnScrollListener() {
     private var currentPage = 0
     private var previousTotalItemCount = 0

@@ -1,3 +1,5 @@
+@file:Suppress("LocalVariableName","unused")
+
 package id.hmd.itunesmovies.di
 
 
@@ -22,7 +24,7 @@ import javax.inject.Singleton
 /**
  * Created by hmdrrhmn on 2019-10-09 at 14:14.
  */
-
+@Suppress("unused")
 @Module
 class ApiModule(private val apiUrl: String) {
 
@@ -85,6 +87,7 @@ class ApiModule(private val apiUrl: String) {
         return builder.build()
     }
 
+    @Suppress("LocalVariableName")
     @Provides
     @Singleton
     @Named("provider_api")

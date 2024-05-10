@@ -168,6 +168,7 @@ dependencies {
     implementation(libs.rxkotlin)
     implementation(libs.rxandroid)
     implementation(libs.rxjava)
+    //noinspection UseTomlInstead
     implementation ("com.pawegio.kandroid:kandroid:0.8.7@aar")
 
     //rootchecker

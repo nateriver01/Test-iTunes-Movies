@@ -1,3 +1,5 @@
+@file:Suppress("PrivatePropertyName")
+
 package id.hmd.itunesmovies.adapter
 
 import android.annotation.SuppressLint
@@ -12,6 +14,7 @@ import id.hmd.itunesmovies.databinding.ItemMyfavlistBinding
 import id.hmd.itunesmovies.model.response.ResultsItem
 import id.hmd.itunesmovies.utils.Helpers
 
+@Suppress("PrivatePropertyName")
 class MyFavListAdapter(private val obj: List<ResultsItem>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -31,20 +34,18 @@ class MyFavListAdapter(private val obj: List<ResultsItem>) :
             item: ResultsItem,
             mContext: Context
         ) {
-            with(item) {
-                binding.llMyfavlistItem.setOnClickListener {
-                    interfaceInstance!!.onListMyFavClick(item)
-                }
-
-                item.artworkUrl100.let {
-                    Glide.with(mContext).load(it)
-                        .placeholder(Helpers.createCircularProgress(mContext))
-                        .error(R.drawable.img_moviesitem_placeholder)
-                        .into(binding.ivMyfavlistItem)
-                }
-                binding.tvMyfavlistItemName.text = item.trackName
-                binding.tvMyfavlistItemMerchant.text = item.primaryGenreName
+            binding.llMyfavlistItem.setOnClickListener {
+                interfaceInstance!!.onListMyFavClick(item)
             }
+
+            item.artworkUrl100.let {
+                Glide.with(mContext).load(it)
+                    .placeholder(Helpers.createCircularProgress(mContext))
+                    .error(R.drawable.img_moviesitem_placeholder)
+                    .into(binding.ivMyfavlistItem)
+            }
+            binding.tvMyfavlistItemName.text = item.trackName
+            binding.tvMyfavlistItemMerchant.text = item.primaryGenreName
         }
     }
 

@@ -1,4 +1,4 @@
-package id.hmd.itunesmovies.modules.movieslist
+package id.hmd.itunesmovies.modules.movies
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -34,8 +34,6 @@ import id.hmd.itunesmovies.adapter.MoviesListAdapter
 import id.hmd.itunesmovies.base.BaseFragment
 import id.hmd.itunesmovies.databinding.FragmentMoviesListBinding
 import id.hmd.itunesmovies.model.response.ResultsItem
-import id.hmd.itunesmovies.modules.movies.MoviesContract
-import id.hmd.itunesmovies.modules.movies.MoviesPresenter
 import id.hmd.itunesmovies.modules.movies.moviesdetail.MoviesDetailActivity
 import id.hmd.itunesmovies.modules.movies.moviessearch.MoviesSearchActivity
 import id.hmd.itunesmovies.utils.AppConstants

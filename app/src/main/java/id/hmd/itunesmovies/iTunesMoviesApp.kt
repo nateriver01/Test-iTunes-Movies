@@ -1,3 +1,5 @@
+@file:Suppress("ClassName")
+
 package id.hmd.itunesmovies
 
 import android.app.Application
@@ -7,6 +9,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
 
+@Suppress("ClassName")
 class iTunesMoviesApp : MultiDexApplication() {
     companion object {
         lateinit var instance: Application

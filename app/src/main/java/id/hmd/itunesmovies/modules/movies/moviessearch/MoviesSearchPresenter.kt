@@ -3,7 +3,6 @@ package id.hmd.itunesmovies.modules.movies.moviessearch
 import android.content.Context
 import id.hmd.itunesmovies.iTunesMoviesApp
 import id.hmd.itunesmovies.base.BasePresenter
-import id.hmd.itunesmovies.modules.movieslist.moviessearch.MoviesSearchContract
 import id.hmd.itunesmovies.utils.AppConstants
 import id.hmd.itunesmovies.utils.LocalPreferences
 

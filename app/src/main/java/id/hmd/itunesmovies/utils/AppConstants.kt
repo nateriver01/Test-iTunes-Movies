@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package id.hmd.itunesmovies.utils
 
 import id.hmd.itunesmovies.BuildConfig
@@ -6,17 +8,14 @@ import id.hmd.itunesmovies.BuildConfig
 /**
  * Created by hmdrrhmn on 2019-10-03 at 17:37.
  */
+@Suppress("unused")
 object AppConstants {
 
     init {
         System.loadLibrary("native-lib")
     }
 
-    enum class Stage(val value: Int) {
-        PRODUCTION(1),
-        STAGING(2),
-        DEVELOPMENT(3)
-    }
+
 
     private val environmentStage =BuildConfig.STAGE_TYPE
 
@@ -26,8 +25,6 @@ object AppConstants {
     private external fun getPreferenceName(environmentStage: Int): String
     private external fun getSharedPreferencePassword(environmentStage: Int): String
     private external fun getDbName(environmentStage: Int): String
-
-    const val DEVICE_IS_ROOTED = "DEVICE_IS_ROOTED"
 
     val BASE_URL = appUrl(environmentStage)
     val PREF_NAME: String = getPreferenceName(environmentStage)

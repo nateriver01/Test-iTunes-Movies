@@ -17,7 +17,7 @@ import id.hmd.itunesmovies.R
 import id.hmd.itunesmovies.base.BaseActivity
 import id.hmd.itunesmovies.databinding.ActivityDashboardBinding
 import id.hmd.itunesmovies.databinding.ItemTabDashboardBinding
-import id.hmd.itunesmovies.modules.movieslist.MoviesFragment
+import id.hmd.itunesmovies.modules.movies.MoviesFragment
 import id.hmd.itunesmovies.modules.myfav.MyFavFragment
 import id.hmd.itunesmovies.utils.replace
 

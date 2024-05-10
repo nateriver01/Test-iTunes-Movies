@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<resources xmlns:tools="http://schemas.android.com/tools">
-
-    <dimen name="design_fab_image_size" tools:override="true">70dp</dimen>
+<resources>
 
     <dimen name="dimen16dp">16dp</dimen>
     <dimen name="dimen20dp">20dp</dimen>

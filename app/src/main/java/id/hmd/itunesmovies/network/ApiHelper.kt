@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package id.hmd.itunesmovies.network
 
 import android.content.Context
@@ -15,6 +17,7 @@ import java.io.IOException
 import javax.inject.Inject
 
 
+@Suppress("unused")
 class ApiHelper
 //    @Inject SharedPreferences sharedPreferences;
 //    @Inject Encryption encryption;

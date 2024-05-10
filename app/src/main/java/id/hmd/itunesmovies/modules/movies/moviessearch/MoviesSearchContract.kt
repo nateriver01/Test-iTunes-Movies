@@ -1,4 +1,4 @@
-package id.hmd.itunesmovies.modules.movieslist.moviessearch
+package id.hmd.itunesmovies.modules.movies.moviessearch
 
 import id.hmd.itunesmovies.base.BaseView
 import id.hmd.itunesmovies.model.response.ResultsItem
