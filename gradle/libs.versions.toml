@@ -13,8 +13,7 @@ daggerAndroidSupport = "2.46.1"
 floatingsearchview = "2.1.1"
 glide = "4.16.0"
 gson = "2.10.1"
-kandroid = "0.8.7"
-kotlin = "1.9.0"
+kotlin = "1.9.23"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -71,7 +70,6 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-kandroid = { module = "com.pawegio.kandroid:kandroid", version.ref = "kandroid" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 library-no-op = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "libraryNoOp" }
