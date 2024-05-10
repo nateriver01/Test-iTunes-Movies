@@ -104,7 +104,7 @@ class MoviesDetailActivity : BaseActivity(), MoviesDetailContract.View {
         }
 
         binding.btnMoviesdetailSubmit.setOnClickListener {
-
+            onLoadingButton(true)
         }
 
 

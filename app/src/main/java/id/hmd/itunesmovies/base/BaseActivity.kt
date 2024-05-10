@@ -4,9 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
-import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import id.hmd.itunesmovies.iTunesMoviesApp
@@ -60,11 +58,6 @@ abstract class BaseActivity: AppCompatActivity(), BaseView {
         initExceptionHandler()
 
         onBindView()
-    }
-
-    protected fun dismissKeyboard() {
-        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(window.decorView.windowToken, 0)
     }
 
     override fun showLoading() {
