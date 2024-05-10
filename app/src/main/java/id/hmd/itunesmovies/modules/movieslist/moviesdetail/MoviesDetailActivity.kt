@@ -1,17 +1,14 @@
 package id.hmd.itunesmovies.modules.movies.moviesdetail
 
 import android.annotation.SuppressLint
-import android.os.Handler
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.widget.NestedScrollView
 import androidx.lifecycle.lifecycleScope
-import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import id.hmd.itunesmovies.R
 import id.hmd.itunesmovies.base.BaseActivity
@@ -21,7 +18,6 @@ import id.hmd.itunesmovies.model.response.ResultsItem
 import id.hmd.itunesmovies.utils.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.util.*
 
 
 class MoviesDetailActivity : BaseActivity(), MoviesDetailContract.View {
@@ -30,9 +26,9 @@ class MoviesDetailActivity : BaseActivity(), MoviesDetailContract.View {
 
     override val binding: ActivityMoviesdetailBinding
         get() = ActivityMoviesdetailBinding.inflate(layoutInflater)
-    private val mPresenter: MoviesDetailContract.Presenter = MoviesDetailPresenter(this)
+    //private val mPresenter: MoviesDetailContract.Presenter = MoviesDetailPresenter(this)
     private var productId: String = ""
-    private var product:ResultsItem= ResultsItem()
+    //private var product:ResultsItem= ResultsItem()
     private lateinit var ivBanner:ImageView
     private lateinit var toolbar: Toolbar
     private lateinit var toolbarTitle: TextView
