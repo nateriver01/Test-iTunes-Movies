@@ -1,5 +1,6 @@
 package id.hmd.itunesmovies.modules.movies.moviessearch
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -13,12 +14,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewbinding.ViewBinding
 import id.hmd.itunesmovies.adapter.MoviesSearchAdapter
 import id.hmd.itunesmovies.adapter.MoviesSearchHistoryAdapter
 import id.hmd.itunesmovies.base.BaseActivity
 import id.hmd.itunesmovies.databinding.ActivityMoviesSearchBinding
-import id.hmd.itunesmovies.databinding.ActivityMoviesdetailBinding
 import id.hmd.itunesmovies.model.response.ResultsItem
 import id.hmd.itunesmovies.modules.movies.moviesdetail.MoviesDetailActivity
 import id.hmd.itunesmovies.modules.movieslist.moviessearch.MoviesSearchContract
@@ -213,10 +212,11 @@ class MoviesSearchActivity : BaseActivity(), MoviesSearchContract.View, View.OnC
 
     }
 
-    override fun onSuccessSearchProduct(productList: List<ResultsItem>) {
+    @SuppressLint("NotifyDataSetChanged")
+    override fun onSuccessSearchProduct(moviesList: List<ResultsItem>) {
         stopShimmer(rvProduct, shimmerProduct)
         listProduct.clear()
-        listProduct.addAll(productList)
+        listProduct.addAll(moviesList)
         productAdapter.notifyDataSetChanged()
     }
 

@@ -84,7 +84,7 @@ class DashboardActivity : BaseActivity(), DashboardContract.View {
         //val tlDashboard = binding.tlDashboard
         for (i in dashboardTabTitle.indices) {
             val customTab = itemTab.root
-            val tabTitle: String = dashboardTabTitle.get(i)
+            val tabTitle: String = dashboardTabTitle[i]
             itemTab.tvTabTitle.text = tabTitle
 
             when (tabTitle){

@@ -129,7 +129,9 @@ class MyFavFragment : BaseFragment(), MyFavContract.View, MyFavListAdapter.OnIte
     @SuppressLint("NotifyDataSetChanged")
     override fun onSuccessGetMyFavList(myfavList: List<ResultsItem>) {
         if (!isLoadMore) {
-            if (!listMyFav.isEmpty()) listMyFav.clear()
+            if (listMyFav.isNotEmpty()){
+                listMyFav.clear()
+            }
             listMyFav.addAll(myfavList)
             myfavListAdapter.notifyDataSetChanged()
             stopShimmer(rvMyFavList, shimmerMyFav)
@@ -194,8 +196,6 @@ class MyFavFragment : BaseFragment(), MyFavContract.View, MyFavListAdapter.OnIte
     override fun onFailOrderCount() {
         ivReddot.visibility = View.INVISIBLE
     }
-
-
 
     override fun onClick(v: View?) {
         TODO("Not yet implemented")

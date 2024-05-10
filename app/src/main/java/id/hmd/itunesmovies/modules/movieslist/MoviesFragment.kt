@@ -11,6 +11,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.marginRight
@@ -42,10 +44,10 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-@Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener,
     MoviesListAdapter.OnItemClick {
 
+    private lateinit var resultLauncher: ActivityResultLauncher<Intent>
     lateinit var binding: FragmentMoviesListBinding
 
     private val mPresenter: MoviesContract.Presenter = MoviesPresenter(this)
@@ -62,14 +64,13 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
 
     private val mArrayOfListProduct = ArrayList<ResultsItem>()
 
-    private var arrayListCategoryClick = ArrayList<Boolean>()
     private var selectedProductCategory = ArrayList<String>()
     private var selectedMerchant = ArrayList<String>()
 
     private var isLoadFromCategory: Boolean = false
 
-    var page: Int = 0
-    var itemLimit: Int = 10
+    private var page: Int = 0
+    private var itemLimit: Int = 10
 
     private lateinit var srlMovies: SwipeRefreshLayout
     private lateinit var nsvMovies: NestedScrollView
@@ -102,18 +103,11 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
 
         mContext = requireContext()
 
-        initLayout()
-        initData()
-        initListMoviesAdapter()
-
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-
-        if (requestCode == AppConstants.CATALOG_SEARCH) {
-
-            // Make sure the request was successful
-            if (resultCode == Activity.RESULT_OK) {
+        resultLauncher = registerForActivityResult(
+            ActivityResultContracts
+            .StartActivityForResult()){
+            if (it.resultCode == Activity.RESULT_OK){
+                val data:Intent? = it.data
                 if (data != null) {
                     if (!data.getStringExtra(AppConstants.FILTER_PRODUCT_TITLE).isNullOrEmpty()) {
                         searchTitle = data.getStringExtra(AppConstants.FILTER_PRODUCT_TITLE) ?: ""
@@ -122,7 +116,7 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
                         startShimmer(rvMoviesList, shimmerMoviesList).apply {
                             layoutMoviesEmpty.visibility = View.GONE
                         }
-                        mArrayOfListProduct.removeAll(mArrayOfListProduct)
+                        mArrayOfListProduct.removeAll(mArrayOfListProduct.toSet())
 
                         isLoadMore = false
                         addDataToList()
@@ -130,6 +124,11 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
                 }
             }
         }
+
+        initLayout()
+        initData()
+        initListMoviesAdapter()
+
     }
 
     private fun initData() {
@@ -160,7 +159,7 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
         etSearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
                 p0?.let {
-                    if (it.toString().length == 0) {
+                    if (it.toString().isEmpty()) {
                         searchTitle = ""
                         isLoadFromCategory = false
                         startShimmer(rvMoviesList, shimmerMoviesList).apply {
@@ -178,7 +177,7 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
 
         //Load more list
         nsvMovies = binding.nsvMovieslistItem
-        nsvMovies.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { v, _, scrollY, oldScrollX, oldScrollY ->
+        nsvMovies.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { v, _, scrollY, _, oldScrollY ->
             if (v.getChildAt(v.childCount - 1) != null) {
                 if (scrollY >= v.getChildAt(v.childCount - 1).measuredHeight - v.measuredHeight &&
                     scrollY > oldScrollY
@@ -199,8 +198,11 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
                             }
                         } else {
                             page = 0
-                            rvMoviesList.visibility = View.VISIBLE.apply {
-                                layoutMoviesEmpty.visibility = View.GONE
+//                            rvMoviesList.visibility = View.VISIBLE.apply {
+//                                layoutMoviesEmpty.visibility = View.GONE
+//                            }
+                            if(rvMoviesList.visibility==View.VISIBLE){
+                                layoutMoviesEmpty.visibility=View.GONE
                             }
                         }
                     }
@@ -270,10 +272,10 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
                     (ablHeader.totalScrollRange + appBarLayout.y) / ablHeader.totalScrollRange
                 val constraintSet = ConstraintSet()
                 constraintSet.clone(clHeader)
-                var biasHorPercentage = 0.0f
-                var biasVerPercentage = 0.0f
-                var searchMargin = 0
-                var searchHeight = 0
+                val biasHorPercentage: Float
+                val biasVerPercentage: Float
+                val searchMargin: Int
+                val searchHeight: Int
 
                 if (y == 0) {
                     biasHorPercentage = 0.5f
@@ -311,13 +313,7 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
         when (v) {
             btnLayoutMoviesEmpty -> {
                 isLoadFromCategory = false
-                for (i in 0..arrayListCategoryClick.size - 1) {
-                    if (i == 0) {
-                        arrayListCategoryClick[0] = true
-                    } else {
-                        arrayListCategoryClick[i] = false
-                    }
-                }
+
                 selectedMerchant = ArrayList()
                 selectedProductCategory = ArrayList()
 
@@ -335,7 +331,8 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
 
             etSearch -> {
                 val intent = Intent(activity, MoviesSearchActivity::class.java)
-                startActivityForResult(intent, AppConstants.CATALOG_SEARCH)
+                //startActivityForResult(intent, AppConstants.CATALOG_SEARCH)
+                resultLauncher.launch(intent)
             }
         }
     }
@@ -347,7 +344,7 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
     }
 
     private fun stopShimmer(rv: RecyclerView, shimmer: View) {
-        rv.visibility = View.VISIBLE.apply {
+        if(rv.visibility==View.VISIBLE){
             shimmer.visibility = View.GONE
         }
         srlMovies.isRefreshing = false
@@ -371,16 +368,17 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onSuccessgetMoviesList(moviesList: List<ResultsItem>?) {
         if (layoutMoviesEmpty.visibility == View.VISIBLE) {
-            layoutMoviesEmpty.visibility == View.GONE
+            layoutMoviesEmpty.visibility = View.GONE
         }
         isLoading = false
         if (!isLoadMore) {
             mArrayOfListProduct.clear().apply {
                 moviesList?.let {
                     mArrayOfListProduct.addAll(it).apply {
-                        var layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
+                        val layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
                         rvMoviesList.layoutManager = layoutManager
                         mMoviesListAdapter = MoviesListAdapter(mArrayOfListProduct)
                         mMoviesListAdapter.notifyDataSetChanged()
@@ -398,7 +396,7 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
                 mArrayOfListProduct.clear()
                 mArrayOfListProduct.addAll(dist)
             }
-            var layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
+            val layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
             rvMoviesList.layoutManager = layoutManager
             mMoviesListAdapter = MoviesListAdapter(mArrayOfListProduct)
             mMoviesListAdapter.notifyItemRangeChanged(
@@ -430,13 +428,13 @@ class MoviesFragment : BaseFragment(), MoviesContract.View, View.OnClickListener
         isLoading = false
         stopShimmer(rvMoviesList, shimmerMoviesList).apply {
             if (!isLoadMore) {
-                layoutMoviesEmpty.visibility = View.VISIBLE.apply {
+                if(layoutMoviesEmpty.visibility==View.VISIBLE){
                     rvMoviesList.visibility = View.GONE
                     isLoadMore = false
                 }
                 setupScrollParams(false)
             } else {
-                rvMoviesList.visibility = View.VISIBLE.apply {
+                if (rvMoviesList.visibility == View.VISIBLE) {
                     layoutMoviesEmpty.visibility = View.GONE
                     skLoading.visibility = View.GONE
                 }

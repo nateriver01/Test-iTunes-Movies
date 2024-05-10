@@ -29,9 +29,6 @@ import javax.inject.Inject
 
 abstract class BaseFragment: Fragment(), BaseView{
 
-    private lateinit var progressDialog: Dialog
-
-
     @Inject
     lateinit var sharedPref: SharedPreferences
 
