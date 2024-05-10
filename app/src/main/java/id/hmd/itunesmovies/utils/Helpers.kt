@@ -1,43 +1,18 @@
 package id.hmd.itunesmovies.utils
 
 import android.annotation.SuppressLint
-import android.app.ActivityManager
 import android.content.Context
-import android.graphics.ColorMatrix
-import android.graphics.ColorMatrixColorFilter
 import android.text.InputFilter
 import android.text.Spanned
-import android.text.TextUtils
 import android.view.View
-import android.widget.Toast
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import id.hmd.itunesmovies.R
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.pawegio.kandroid.layoutInflater
 import id.hmd.itunesmovies.databinding.BottomsheetErrorBinding
-
-import java.util.*
+import com.pawegio.kandroid.layoutInflater
 
 
 object Helpers {
-    fun showToast(context: Context, message: String) {
-        if (!TextUtils.isEmpty(message)) {
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    fun isAppRunning(context: Context, packageName: String): Boolean {
-        val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-        val procInfos = activityManager.runningAppProcesses
-        if (procInfos != null) {
-            for (processInfo in procInfos) {
-                if (processInfo.processName == packageName) {
-                    return true
-                }
-            }
-        }
-        return false
-    }
 
     @SuppressLint("InflateParams")
     fun bottomSheetError(
@@ -50,12 +25,13 @@ object Helpers {
         onClose: ((BottomSheetDialog) -> Unit)?
     ): BottomSheetDialog {
         val bottomSheetDialog = BottomSheetDialog(mContext)
-        //val sheetViewnotRegistered = mContext.layoutInflater?.inflate(R.layout.bottomsheet_error, null)
         val sheetViewnotRegistered = mContext.layoutInflater?.let {
             BottomsheetErrorBinding.inflate(
                 it
             )
         }
+
+
         sheetViewnotRegistered?.clNoconnectionButton?.visibility =
             if(showButton) { View.VISIBLE} else {View.GONE}
 
@@ -85,17 +61,6 @@ object Helpers {
         return circularProgressDrawable
     }
 
-    fun grayScalingImage(): ColorMatrixColorFilter {
-        val colorMatrix = ColorMatrix()
-        colorMatrix.setSaturation(0f)
-        val filter = ColorMatrixColorFilter(colorMatrix)
-        return filter
-    }
-
-    fun getCurrentDateTime(): Date {
-        return Calendar.getInstance().time
-    }
-
     val emojiFilter = InputFilter{
             source: CharSequence, start: Int, end: Int, spanned: Spanned, i2: Int, i3: Int ->
 
@@ -107,7 +72,5 @@ object Helpers {
         }
         null
     }
-
-
 
 }

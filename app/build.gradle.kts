@@ -1,3 +1,4 @@
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -18,6 +19,9 @@ android {
 
     lint {
         baseline = file("lint-baseline.xml")
+        warning += "InvalidPackage"
+        warning += "MissingPermission"
+        abortOnError = true
     }
 
     signingConfigs {
@@ -27,6 +31,7 @@ android {
             keyAlias = "iTunes"
             keyPassword = "Test@234"
         }
+        //just for
         create("production"){
             storeFile = file("../App Signed/test_key")
             storePassword = "Test@123"
@@ -108,11 +113,6 @@ android {
         }
     }
 
-    lintOptions {
-        isAbortOnError = true
-        warning ("InvalidPackage", "MissingPermission")
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -132,11 +132,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.23")
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("com.github.JakeWharton:ViewPagerIndicator:2.4.1")
-    implementation("com.afollestad.material-dialogs:core:3.1.1")
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.viewpagerindicator)
+    implementation(libs.core)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -146,70 +146,69 @@ dependencies {
 
     //NETWORK
     // define a BOM and its version
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.12.0"))
+    implementation(platform(libs.okhttp.bom))
     // define any required OkHttp artifacts without version
-    implementation("com.squareup.okhttp3:okhttp")
-    implementation("com.squareup.okhttp3:logging-interceptor")
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
     //Retrofit2
-    implementation("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation("com.squareup.retrofit2:adapter-rxjava3:2.11.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation(libs.retrofit)
+    implementation(libs.adapter.rxjava3)
+    implementation(libs.retrofit2.converter.gson)
 
     //Chucker - Debugging API
-    debugImplementation("com.github.chuckerteam.chucker:library:4.0.0")
-    releaseImplementation("com.github.chuckerteam.chucker:library-no-op:4.0.0")
+    debugImplementation(libs.library)
+    releaseImplementation(libs.library.no.op)
 
     //UTILS
     //Logger
-    implementation("com.jakewharton.timber:timber:5.0.1")
+    implementation(libs.timber)
     //Gson
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation(libs.gson)
     //Rx Kotlin
-    implementation("io.reactivex.rxjava3:rxkotlin:3.0.0")
-    implementation("io.reactivex.rxjava3:rxandroid:3.0.2")
-    implementation("io.reactivex.rxjava3:rxjava:3.1.5")
+    implementation(libs.rxkotlin)
+    implementation(libs.rxandroid)
+    implementation(libs.rxjava)
     implementation ("com.pawegio.kandroid:kandroid:0.8.7@aar")
 
     //rootchecker
-    implementation("com.scottyab:rootbeer-lib:0.1.0")
+    implementation(libs.rootbeer.lib)
     //aes encrypt
-    implementation("com.scottyab:aescrypt:0.0.1")
+    implementation(libs.aescrypt)
 
     //Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
+    implementation(libs.kotlinx.coroutines.android)
     //Dagger 2 - Dependency injection
-    implementation("com.google.dagger:dagger:2.48")
-    implementation("com.google.dagger:dagger-android-support:2.46.1")
-    kapt("com.google.dagger:dagger-compiler:2.46.1")
-    kapt("com.google.dagger:dagger-android-processor:2.46.1")
+    implementation(libs.dagger)
+    implementation(libs.dagger.android.support)
+    kapt(libs.dagger.compiler)
+    kapt(libs.dagger.android.processor)
 
     //SecurePreference
-    implementation("at.favre.lib:armadillo:1.0.0")
+    implementation(libs.armadillo)
 
     //DB - Room
-    val roomVersion = "2.6.1"
-    implementation("androidx.room:room-runtime:$roomVersion")
-    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
     // optional - Test helpers
-    testImplementation("androidx.room:room-testing:$roomVersion")
+    testImplementation(libs.androidx.room.testing)
     // To use Kotlin Symbol Processing (KSP)
-    ksp("androidx.room:room-compiler:$roomVersion")
+    ksp(libs.androidx.room.compiler)
     // optional - Paging 3 Integration
-    implementation("androidx.room:room-paging:$roomVersion")
+    implementation(libs.androidx.room.paging)
     // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:$roomVersion")
+    implementation(libs.androidx.room.ktx)
     //SQL chipper
-    implementation("net.zetetic:android-database-sqlcipher:4.4.0")
-    implementation("androidx.sqlite:sqlite:2.1.0")
+    implementation(libs.android.database.sqlcipher)
+    implementation(libs.androidx.sqlite.ktx)
 
     //VIEW LIB
-    implementation("com.github.arimorty:floatingsearchview:2.1.1")
-    implementation("com.github.ybq:Android-SpinKit:1.4.0")
-    implementation("com.tapadoo.android:alerter:4.0.0")
+    implementation(libs.floatingsearchview)
+    implementation(libs.android.spinkit)
+    implementation(libs.alerter)
     //Skeleton Shimmer - Loading place holder
-    implementation("com.facebook.shimmer:shimmer:0.5.0@aar")
+    implementation(libs.shimmer)
     //Glide - image
-    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation(libs.glide)
 
 }
 
