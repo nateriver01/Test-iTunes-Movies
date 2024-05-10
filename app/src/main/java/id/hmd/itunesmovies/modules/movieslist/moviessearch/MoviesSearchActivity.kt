@@ -117,6 +117,7 @@ class MoviesSearchActivity : BaseActivity(), MoviesSearchContract.View, View.OnC
         edtSearch.addTextChangedListener(object : TextWatcher {
             private var searchFor = ""
 
+            @SuppressLint("NotifyDataSetChanged")
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val searchText = s.toString().trim()
                 if (searchText.length > minimalChar) {
@@ -202,6 +203,7 @@ class MoviesSearchActivity : BaseActivity(), MoviesSearchContract.View, View.OnC
         shimmer.visibility = View.GONE
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onGetHistoryData(productList: List<String>?) {
         toggleHistoryProduct(true)
         if (!productList.isNullOrEmpty()) {
@@ -224,6 +226,7 @@ class MoviesSearchActivity : BaseActivity(), MoviesSearchContract.View, View.OnC
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onDeleteAllHistory() {
         listHistoryProduct.clear()
         historyAdapter.notifyDataSetChanged()
