@@ -1,9 +1,7 @@
 package id.hmd.itunesmovies.base
 
-import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
