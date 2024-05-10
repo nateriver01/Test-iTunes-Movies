@@ -1,35 +1,13 @@
 package id.hmd.itunesmovies.utils
 
 import android.app.Activity
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
 import android.content.Intent
-import android.graphics.drawable.Drawable
-import android.os.Build
 import android.os.Bundle
-import android.text.Html
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.format.DateFormat
-import android.text.method.HideReturnsTransformationMethod
-import android.text.method.PasswordTransformationMethod
-import android.text.style.ClickableSpan
 import android.view.View
-import android.view.animation.AlphaAnimation
-import android.view.animation.Animation
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import id.hmd.itunesmovies.R
-import java.math.BigInteger
-import java.security.MessageDigest
 import java.text.DecimalFormat
 import java.text.NumberFormat
-import java.text.SimpleDateFormat
 import java.util.*
 
 

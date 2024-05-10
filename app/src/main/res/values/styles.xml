@@ -136,10 +136,10 @@
     </style>
 
     <style name="SubtitleSection">
-        <item name="android:textSize" tools:ignore="SpUsage">14dp</item>
+        <item name="android:textSize" tools:ignore="SpUsage">14sp</item>
         <item name="android:lineSpacingExtra">4dp</item>
         <item name="android:letterSpacing">0.0</item>
-        <item name="android:textColor">@color/brown_grey</item>
+        <item name="android:textColor">@color/darker_browngrey</item>
         <item name="android:fontFamily">@font/pt_sans</item>
     </style>
 
@@ -332,7 +332,7 @@
     </style>
 
     <style name="Regular12.White" parent="Regular">
-        <item name="android:textSize" tools:ignore="SpUsage">14dp</item>
+        <item name="android:textSize" tools:ignore="SpUsage">14sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 

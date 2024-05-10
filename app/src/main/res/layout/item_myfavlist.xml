@@ -41,11 +41,13 @@
                     android:layout_height="130dp"
                     android:layout_centerInParent="true"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/image_my_favourite_movies"
                     android:scaleType="centerCrop"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/img_moviesitem_placeholder" />
+                    app:srcCompat="@drawable/img_moviesitem_placeholder"
+                    tools:ignore="ImageContrastCheck" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="115dp"
@@ -68,9 +70,7 @@
                 android:layout_marginTop="-30dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="5dp"
-                android:textColor="@color/white"
-                android:textSize="14dp"
-                tools:ignore="SpUsage"
+                tools:ignore="TextContrastCheck"
                 tools:text="Movic" />
 
             <TextView
@@ -111,6 +111,7 @@
                 android:background="@drawable/gradient_fav"
                 android:paddingLeft="4dp"
                 android:paddingRight="4dp"
+                android:textColor="#827717"
                 tools:text="Tersedia hingga 20 Sep 2019" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
