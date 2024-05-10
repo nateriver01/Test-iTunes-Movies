@@ -101,7 +101,7 @@
             android:minHeight="0dp"
             android:paddingTop="11dp"
             android:paddingBottom="11dp"
-            android:text="@string/coba_lagi"
+            android:text="@string/try_again"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
