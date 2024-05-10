@@ -4,6 +4,10 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.afollestad.materialdialogs.MaterialDialog
@@ -35,6 +39,22 @@ class DashboardActivity : BaseActivity(), DashboardContract.View {
     private lateinit var dialogExit:MaterialDialog
     private var tabAt = 0
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true)
+        {
+            override fun handleOnBackPressed() {
+                var tabPosition = tlDashboard.selectedTabPosition
+                if(tabPosition!=0){
+                    tabPosition = 0
+                    getTab(tabPosition)
+                }else{
+                    dialogExit.show{cornerRadius(8f)}
+                }
+            }
+        })
+    }
     override fun onBindView() {
         instance = this
         itemTab = ItemTabDashboardBinding.inflate(layoutInflater)
@@ -47,6 +67,7 @@ class DashboardActivity : BaseActivity(), DashboardContract.View {
             getTab(tabAt)
         }
     }
+
 
     private fun initLayout(){
         //Set first fragment on activity created
@@ -72,7 +93,8 @@ class DashboardActivity : BaseActivity(), DashboardContract.View {
                 "Movies" -> {
                     Glide.with(this).load(R.drawable.ic_home_active)
                         .into(itemTab.ivTabImage)
-                    itemTab.tvTabTitle.setTextColor(resources.getColor(R.color.dusk_blue))
+                    itemTab.tvTabTitle.setTextColor(ContextCompat
+                        .getColor(this,R.color.dusk_blue))
                 }
                 "My Favie"->{
                     Glide.with(this).load(R.drawable.ic_catalog)
@@ -97,7 +119,8 @@ class DashboardActivity : BaseActivity(), DashboardContract.View {
 
                 when (tab.position) {
                     0 -> {
-                        itemTab.tvTabTitle.setTextColor(resources.getColor(R.color.dusk_blue))
+                        itemTab.tvTabTitle.setTextColor(ContextCompat
+                            .getColor(instance,R.color.dusk_blue))
                         Glide.with(instance).load(R.drawable.ic_home_active)
                             .into(itemTab.ivTabImage)
                         fragment = MoviesFragment()
@@ -106,7 +129,8 @@ class DashboardActivity : BaseActivity(), DashboardContract.View {
                     }
                     1 -> {
                         //tabView?.tv_tab_title?.setTextColor(resources.getColor(R.color.dusk_blue))
-                        itemTab.tvTabTitle.setTextColor(resources.getColor(R.color.dusk_blue))
+                        itemTab.tvTabTitle.setTextColor(ContextCompat
+                            .getColor(instance,R.color.dusk_blue))
                         Glide.with(instance).load(R.drawable.ic_catalog_active)
                             .into(itemTab.ivTabImage)
                         fragment = MyFavFragment()
@@ -123,13 +147,15 @@ class DashboardActivity : BaseActivity(), DashboardContract.View {
                     0 -> {
                         Glide.with(instance).load(R.drawable.ic_home)
                             .into(itemTab.ivTabImage)
-                        itemTab.tvTabTitle.setTextColor(resources.getColor(R.color.brown_grey))
+                        itemTab.tvTabTitle.setTextColor(ContextCompat
+                            .getColor(instance,R.color.brown_grey))
                         //supportFragmentManager.replace(R.id.fl_dashboard, HomeFragment(),false)
                     }
                     1 -> {
                         Glide.with(instance).load(R.drawable.ic_catalog)
                             .into(itemTab.ivTabImage)
-                        itemTab.tvTabTitle.setTextColor(resources.getColor(R.color.brown_grey))
+                        itemTab.tvTabTitle.setTextColor(ContextCompat
+                            .getColor(instance,R.color.brown_grey))
                         //supportFragmentManager.replace(R.id.fl_dashboard, MoviesFragment(),false)
                     }
                 }
@@ -137,17 +163,6 @@ class DashboardActivity : BaseActivity(), DashboardContract.View {
 
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        var tabPosition = tlDashboard.selectedTabPosition
-        if(tabPosition!=0){
-            tabPosition = 0
-            getTab(tabPosition)
-        }else{
-            dialogExit.show{cornerRadius(8f)}
-        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -162,13 +177,14 @@ class DashboardActivity : BaseActivity(), DashboardContract.View {
         customView.findViewById<Button>(R.id.btn_dialog_positive).setOnClickListener {
             dialogExit.dismiss()
             this.finishAffinity()
-            super.onBackPressed()
+            //super.onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
         }
     }
 
 
     //get tab selected to response a result
-    fun getTab(position: Int) {
+    private fun getTab(position: Int) {
         val tab: TabLayout.Tab? = tlDashboard.getTabAt(position)
         tab?.select()
     }
@@ -177,10 +193,12 @@ class DashboardActivity : BaseActivity(), DashboardContract.View {
     override fun setTabLayoutGrey(on: Boolean) {
         tlDashboard.apply {
             if(on) {
-                background = resources.getDrawable(R.color.pure_black)
+                //background = resources.getDrawable(R.color.pure_black)
+                background = ResourcesCompat.getDrawable(resources,R.color.pure_black,null)
                 alpha = 0.24f
             } else {
-                background = resources.getDrawable(R.color.white)
+                //background = resources.getDrawable(R.color.white)
+                background = ResourcesCompat.getDrawable(resources,R.color.white,null)
                 alpha = 1f
             }
         }

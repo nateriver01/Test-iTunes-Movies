@@ -92,7 +92,8 @@ class MoviesDetailActivity : BaseActivity(), MoviesDetailContract.View {
     private fun initClickListener(){
 
         binding.cvMoviesdetailBack.setOnClickListener {
-            onBackPressed()
+            //onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
         }
 
         binding.clMoviesdetailDescHeader.setOnClickListener{

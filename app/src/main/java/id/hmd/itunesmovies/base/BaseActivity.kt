@@ -34,7 +34,6 @@ abstract class BaseActivity: AppCompatActivity(), BaseView {
 
     protected abstract val binding: ViewBinding
 
-    lateinit var viewModel : ViewModel
 
     lateinit var coroutineExcHandler: CoroutineExceptionHandler
 
