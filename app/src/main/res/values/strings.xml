@@ -31,4 +31,6 @@
     <string name="empty_movies_list">Empty movies list</string>
     <string name="icon_empty_favourite_movies">icon empty favourite movies</string>
     <string name="choose_favourite_movies">Let\'s choose your favourite movies</string>
+    <string name="movies_list_image">movies list image</string>
+    <string name="icon_movies_price">icon movies price</string>
 </resources>

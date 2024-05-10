@@ -37,11 +37,13 @@
                 android:layout_height="130dp"
                 android:layout_centerInParent="true"
                 android:adjustViewBounds="true"
+                android:contentDescription="@string/movies_list_image"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/img_moviesitem_placeholder" />
+                app:srcCompat="@drawable/img_moviesitem_placeholder"
+                tools:ignore="ImageContrastCheck" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="115dp"
@@ -91,6 +93,7 @@
                 android:id="@+id/iv_movieslist_item_points"
                 android:layout_width="33dp"
                 android:layout_height="36dp"
+                android:contentDescription="@string/icon_movies_price"
                 android:paddingStart="-8dp"
                 android:scaleType="fitCenter"
                 app:layout_constraintStart_toStartOf="parent"
@@ -105,6 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
                 android:text="@string/placeholder_text"
+                android:textColor="#EF6C00"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iv_movieslist_item_points"
                 app:layout_constraintTop_toTopOf="@+id/iv_movieslist_item_points" />
