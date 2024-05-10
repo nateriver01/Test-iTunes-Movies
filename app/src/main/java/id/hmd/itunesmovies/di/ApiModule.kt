@@ -1,4 +1,4 @@
-@file:Suppress("LocalVariableName","unused")
+@file:Suppress("LocalVariableName")
 
 package id.hmd.itunesmovies.di
 
@@ -24,7 +24,6 @@ import javax.inject.Singleton
 /**
  * Created by hmdrrhmn on 2019-10-09 at 14:14.
  */
-@Suppress("unused")
 @Module
 class ApiModule(private val apiUrl: String) {
 
@@ -77,7 +76,7 @@ class ApiModule(private val apiUrl: String) {
     @Provides
     @Singleton
     @Named("provider_api")
-    internal fun provideOkHttpClient(customInterceptor: CustomInterceptor, authInterceptor: AuthInterceptor): OkHttpClient {
+    internal fun provideOkHttpClient(ignoredCustomInterceptor: CustomInterceptor, ignoredAuthInterceptor: AuthInterceptor): OkHttpClient {
 
         val builder = OkHttpClient.Builder()
             .readTimeout(30, TimeUnit.SECONDS)

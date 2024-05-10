@@ -34,6 +34,7 @@ abstract class BaseFragment: Fragment(), BaseView{
     @Inject
     lateinit var sharedPref: SharedPreferences
 
+    @Suppress("MemberVisibilityCanBePrivate")
     lateinit var localPreferences: LocalPreferences
 
     private lateinit var bottsheetOffline: BottomSheetDialog
@@ -42,6 +43,7 @@ abstract class BaseFragment: Fragment(), BaseView{
     protected abstract fun getViewBind(container: ViewGroup?): ViewBinding
     protected abstract fun onBindView()
 
+    @Suppress("MemberVisibilityCanBePrivate")
     protected lateinit var fragmentHandler: Handler
 
     lateinit var coroutineExcHandler: CoroutineExceptionHandler

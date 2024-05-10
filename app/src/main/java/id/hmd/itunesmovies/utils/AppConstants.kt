@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package id.hmd.itunesmovies.utils
 
 import id.hmd.itunesmovies.BuildConfig
@@ -8,7 +6,6 @@ import id.hmd.itunesmovies.BuildConfig
 /**
  * Created by hmdrrhmn on 2019-10-03 at 17:37.
  */
-@Suppress("unused")
 object AppConstants {
 
     init {

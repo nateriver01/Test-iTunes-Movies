@@ -1,3 +1,5 @@
+@file:Suppress("RemoveEmptyClassBody")
+
 package id.hmd.itunesmovies.modules.movies.moviesdetail
 
 import id.hmd.itunesmovies.base.BaseView

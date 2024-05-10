@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package id.hmd.itunesmovies.network
 
 import android.content.Context
@@ -17,14 +15,13 @@ import java.io.IOException
 import javax.inject.Inject
 
 
-@Suppress("unused")
 class ApiHelper
 //    @Inject SharedPreferences sharedPreferences;
 //    @Inject Encryption encryption;
 //endregion
 
 //region ApiHelper
-private constructor(context: Context?) : ApiDataSource {
+private constructor(ignoredContext: Context?) : ApiDataSource {
 
     @Inject
     lateinit var apiService: ApiService

@@ -6,9 +6,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import java.text.DecimalFormat
-import java.text.NumberFormat
-import java.util.*
 
 
 /**
@@ -37,17 +34,6 @@ fun FragmentManager.replace(container: Int, fragment: Fragment, addToBackStack: 
     transaction.commitAllowingStateLoss()
 }
 
-fun Long.currencyFormatterLong(): String {
-    val decimalFormat = NumberFormat.getNumberInstance(Locale.ITALY) as DecimalFormat
-    decimalFormat.applyPattern("###,###.##")
-    return decimalFormat.format(this)
-}
-fun String.digitsOnly(): String{
-    val regex = Regex("[^0-9]")
-    return regex.replace(this, "")
-}
-
-
 fun View.toggleRotation(isExpand:Boolean) {
 
     if(isExpand){
@@ -58,9 +44,9 @@ fun View.toggleRotation(isExpand:Boolean) {
 }
 
 fun View.toggleVisibility() {
-    if (visibility == View.VISIBLE) {
-        visibility = View.GONE
+    visibility = if (visibility == View.VISIBLE) {
+        View.GONE
     } else {
-        visibility = View.VISIBLE
+        View.VISIBLE
     }
 }

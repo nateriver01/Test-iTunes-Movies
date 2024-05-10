@@ -67,6 +67,7 @@ class MyFavListAdapter(private val obj: List<ResultsItem>) :
     }
 
     override fun getItemViewType(position: Int): Int {
+        @Suppress("LiftReturnOrAssignment")
         if (obj[position].isLoading)
             return TYPELOADING
         else

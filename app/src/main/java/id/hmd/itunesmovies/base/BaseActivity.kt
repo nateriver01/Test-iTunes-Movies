@@ -1,4 +1,4 @@
-@file:Suppress("SameParameterValue")
+@file:Suppress("SameParameterValue", "MemberVisibilityCanBePrivate")
 
 package id.hmd.itunesmovies.base
 
@@ -29,6 +29,9 @@ abstract class BaseActivity: AppCompatActivity(), BaseView {
     @Inject
     lateinit var sharedPref: SharedPreferences
 
+    @Suppress(
+        "MemberVisibilityCanBePrivate"
+    )
     lateinit var localPreferences: LocalPreferences
 
     protected abstract val binding: ViewBinding

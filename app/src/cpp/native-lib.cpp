@@ -22,7 +22,7 @@ Java_id_hmd_itunesmovies_utils_AppConstants_hostName(
 }
 
 JNIEXPORT jstring JNICALL
-Java_id_hmd_itunesmovies_utils_AppConstants_getPreferenceName(JNIEnv *env, jobject thiz, jint environmentStage) {
+Java_id_hmd_itunesmovies_utils_AppConstants_getPreferenceName(JNIEnv *env, [[maybe_unused]] jobject thiz, jint environmentStage) {
     int type = (int) environmentStage;
     string preferenceName;
     if (type == ENV_PRODUCTION) {
@@ -66,7 +66,8 @@ Java_id_hmd_itunesmovies_utils_AppConstants_appUrl(
 }
 
 JNIEXPORT jstring JNICALL
-Java_id_hmd_itunesmovies_utils_AppConstants_getSharedPreferencePassword(JNIEnv *env, jobject thiz, jint environmentStage) {
+Java_id_hmd_itunesmovies_utils_AppConstants_getSharedPreferencePassword(JNIEnv *env,
+                                                                        [[maybe_unused]] jobject thiz, jint environmentStage) {
     int type = (int) environmentStage;
     string value;
     //random character
@@ -81,7 +82,7 @@ Java_id_hmd_itunesmovies_utils_AppConstants_getSharedPreferencePassword(JNIEnv *
 }
 
 JNIEXPORT jstring JNICALL
-Java_id_hmd_itunesmovies_utils_AppConstants_getDbName(JNIEnv *env, jobject thiz, jint environmentStage) {
+Java_id_hmd_itunesmovies_utils_AppConstants_getDbName(JNIEnv *env, [[maybe_unused]] jobject thiz, jint environmentStage) {
     int type = (int) environmentStage;
     string dbName;
     if (type == ENV_PRODUCTION) {
