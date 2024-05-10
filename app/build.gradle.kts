@@ -16,6 +16,10 @@ android {
     namespace = "id.hmd.itunesmovies"
     compileSdk = 34
 
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+
     signingConfigs {
         create("development") {
             storeFile = file("../App Signed/test_key")
