@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="47dp"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/ic_emptymyfav" />
+
+    <TextView
+        style="@style/TitleSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="57dp"
+        android:text="@string/no_favmovie_yet"
+        android:textAlignment="center" />
+
+    <TextView
+        style="@style/PtSansRegular5ls12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="74dp"
+        android:text="test 8"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/btn_emptymyfav_exchange"
+        style="@style/ButtonLargePrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/bg_rounded8_dusk_blue"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:text="Tukar Point Kamu"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</LinearLayout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/dimen16dp"
+    android:background="@color/whiteTransparent"
+    android:orientation="vertical"
+    tools:ignore="Overdraw">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_rounded3_white"
+        tools:layout_conversion_absoluteHeight="232dp"
+        tools:layout_conversion_absoluteWidth="371dp">
+
+        <View
+            android:id="@+id/icon"
+            android:layout_width="0dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/skeleton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_absoluteHeight="130dp"
+            tools:layout_conversion_absoluteWidth="371dp" />
+
+        <View
+            android:id="@+id/topText"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/skeleton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/icon"
+            app:layout_constraintTop_toBottomOf="@+id/icon"
+            tools:layout_conversion_absoluteHeight="20dp"
+            tools:layout_conversion_absoluteWidth="100dp" />
+
+        <View
+            android:id="@+id/bottomText"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="70dp"
+            android:background="@drawable/skeleton"
+            app:layout_constraintEnd_toEndOf="@+id/topText"
+            app:layout_constraintStart_toStartOf="@+id/topText"
+            app:layout_constraintTop_toBottomOf="@+id/topText"
+            tools:layout_conversion_absoluteHeight="20dp"
+            tools:layout_conversion_absoluteWidth="323dp" />
+
+        <View
+            android:id="@+id/bottomText2"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/skeleton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottomText"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_conversion_absoluteHeight="20dp"
+            tools:layout_conversion_absoluteWidth="90dp" />
+
+        <View
+            android:id="@+id/bottomText3"
+            android:layout_width="63dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/skeleton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottomText2"
+            tools:layout_conversion_absoluteHeight="20dp"
+            tools:layout_conversion_absoluteWidth="323dp" />
+
+        <View
+            android:id="@+id/bottomText6"
+            android:layout_width="63dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/skeleton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottomText5"
+            tools:layout_conversion_absoluteHeight="20dp"
+            tools:layout_conversion_absoluteWidth="323dp" />
+
+        <View
+            android:id="@+id/bottomText4"
+            android:layout_width="13dp"
+            android:layout_height="6dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/skeleton"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomText3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottomText3"
+            tools:layout_conversion_absoluteHeight="20dp"
+            tools:layout_conversion_absoluteWidth="323dp" />
+
+        <View
+            android:layout_width="13dp"
+            android:layout_height="6dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/skeleton"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomText6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottomText6"
+            tools:layout_conversion_absoluteHeight="20dp"
+            tools:layout_conversion_absoluteWidth="323dp" />
+
+        <View
+            android:id="@+id/topText3"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/skeleton"
+            app:layout_constraintEnd_toEndOf="@+id/bottomText4"
+            app:layout_constraintStart_toStartOf="@+id/bottomText3"
+            app:layout_constraintTop_toBottomOf="@+id/bottomText3"
+            tools:layout_conversion_absoluteHeight="20dp"
+            tools:layout_conversion_absoluteWidth="100dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/skeleton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/bottomText4"
+            app:layout_constraintStart_toStartOf="@+id/bottomText3"
+            app:layout_constraintTop_toBottomOf="@+id/bottomText6"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_conversion_absoluteHeight="20dp"
+            tools:layout_conversion_absoluteWidth="100dp" />
+
+        <View
+            android:id="@+id/bottomText5"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/skeleton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topText3"
+            tools:layout_conversion_absoluteHeight="20dp"
+            tools:layout_conversion_absoluteWidth="90dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.facebook.shimmer.ShimmerFrameLayout>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movies_notfound_desc">The movies you search currently not available. Please try again</string>
+</resources>
