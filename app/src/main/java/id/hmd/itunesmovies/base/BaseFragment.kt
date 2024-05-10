@@ -1,6 +1,5 @@
 package id.hmd.itunesmovies.base
 
-import android.app.Dialog
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler

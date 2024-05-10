@@ -24,10 +24,12 @@ import id.hmd.itunesmovies.modules.movieslist.moviessearch.MoviesSearchContract
 import id.hmd.itunesmovies.utils.AppConstants
 import id.hmd.itunesmovies.utils.Helpers
 import id.hmd.itunesmovies.utils.changePage
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@OptIn(DelicateCoroutinesApi::class)
 class MoviesSearchActivity : BaseActivity(), MoviesSearchContract.View, View.OnClickListener {
 
     override val binding: ActivityMoviesSearchBinding
@@ -48,8 +50,6 @@ class MoviesSearchActivity : BaseActivity(), MoviesSearchContract.View, View.OnC
     private lateinit var historyAdapter: MoviesSearchHistoryAdapter
     private lateinit var productAdapter: MoviesSearchAdapter
 
-    private var itemLimit: Int = 20
-    private var page: Int = 0
     private var minimalChar: Int = 2
 
     private lateinit var mPresenter: MoviesSearchContract.Presenter
@@ -165,7 +165,7 @@ class MoviesSearchActivity : BaseActivity(), MoviesSearchContract.View, View.OnC
 
     private fun setActivityResult(text: String) {
         val intent = Intent().apply {
-            if (!text.isEmpty() && text.length > minimalChar) {
+            if (text.isNotEmpty() && text.length > minimalChar) {
                 mPresenter.saveHistoryData(listHistoryProduct, text)
                 putExtra(AppConstants.FILTER_PRODUCT_TITLE, text)
             }
