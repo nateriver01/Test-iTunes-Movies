@@ -13,4 +13,5 @@
     <string name="no_favmovie_yet">You don\'t have Favourite Movies yet</string>
     <string name="try_again">Try Again</string>
     <string name="movies_notfound_desc">The movies you search currently not available. Please try again</string>
+    <string name="close_dialog_button">Close Dialog Button</string>
 </resources>

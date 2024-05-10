@@ -411,8 +411,8 @@
     </style>
 
     <style name="Clickable.DialogClose">
-        <item name="android:layout_width">28dp</item>
-        <item name="android:layout_height">28dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
         <item name="android:padding">8dp</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">false</item>
@@ -421,7 +421,7 @@
 
     <style name="Clickable.LihatSemua">
         <item name="android:textColor">@color/dusk_blue</item>
-        <item name="android:textSize">12dp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">false</item>
         <item name="android:background">@drawable/ripple_rounded</item>
