@@ -16,7 +16,6 @@ object AppConstants {
     }
 
 
-
     private val environmentStage =BuildConfig.STAGE_TYPE
 
     private external fun appUrl(environmentStage: Int): String

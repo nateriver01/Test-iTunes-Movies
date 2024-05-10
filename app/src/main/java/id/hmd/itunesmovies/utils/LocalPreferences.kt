@@ -1,10 +1,9 @@
+@file:Suppress("LocalVariableName","unused")
 package id.hmd.itunesmovies.utils
 
 import android.content.SharedPreferences
 
-
-
-
+@Suppress("LocalVariableName","unused")
 class LocalPreferences (private var sharedPreference: SharedPreferences) {
 
     fun savePrefrencesByPrefix(prefkey: String, datas: List<String>){

@@ -33,7 +33,7 @@ class MoviesListAdapter(private val obj: ArrayList<ResultsItem>) : RecyclerView.
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.llMovieslistItem.setOnClickListener {
-            interfaceInstance!!.onListMoviesClick(obj[holder.adapterPosition])
+            interfaceInstance!!.onListMoviesClick(obj[holder.bindingAdapterPosition])
         }
         obj[position].artworkUrl100?.let {
             Glide.with(holder.itemView.context).load(it)
