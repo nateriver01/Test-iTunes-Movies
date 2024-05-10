@@ -17,14 +17,15 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            style="@style/Clickable.DialogClose"
             android:id="@+id/iv_noconnection_dismiss"
+            style="@style/Clickable.DialogClose"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:contentDescription="@string/close_dialog_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_close" />
+            app:srcCompat="@drawable/ic_close"
+            tools:ignore="RedundantDescriptionCheck" />
 
         <ImageView
             android:id="@+id/iv_noconnection_imgplaceholder"
@@ -40,7 +41,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_noconnection_dismiss"
-            app:srcCompat="@drawable/ic_offline" />
+            app:srcCompat="@drawable/ic_offline"
+            tools:ignore="ImageContrastCheck,VisualLintBounds" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,7 +55,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_noconnection_header"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="VisualLintBounds">
 
         <TextView
             android:id="@+id/tv_noconnection_title"
@@ -72,11 +75,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="59dp"
-            tools:text="@string/all_offlinedesc"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tv_noconnection_title"
-            app:layout_constraintTop_toBottomOf="@+id/tv_noconnection_title" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_noconnection_title"
+            tools:text="@string/all_offlinedesc" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -87,7 +90,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cl_noconnection_desc">
+        app:layout_constraintTop_toBottomOf="@+id/cl_noconnection_desc"
+        tools:ignore="VisualLintBounds">
 
         <Button
             android:id="@+id/btn_noconnection_button"

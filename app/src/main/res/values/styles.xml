@@ -13,7 +13,7 @@
 
     <!-- Text Style -->
     <style name="TitleBig">
-        <item name="android:textSize" tools:ignore="SpUsage">18dp</item>
+        <item name="android:textSize" tools:ignore="SpUsage">18sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">@font/pt_sans_bold</item>
     </style>
@@ -27,7 +27,7 @@
     </style>
 
     <style name="TitleSection">
-        <item name="android:textSize" tools:ignore="SpUsage">18dp</item>
+        <item name="android:textSize" tools:ignore="SpUsage">18sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">@font/pt_sans_bold</item>
     </style>
@@ -41,7 +41,7 @@
 
     <style name="ButtonLargePrimary">
         <item name="android:gravity">center</item>
-        <item name="android:textSize" tools:ignore="SpUsage">16dp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/pt_sans_bold</item>
     </style>
@@ -54,7 +54,7 @@
     </style>
 
     <style name="TitleProduct">
-        <item name="android:textSize" tools:ignore="SpUsage">16dp</item>
+        <item name="android:textSize" tools:ignore="SpUsage">16sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">@font/pt_sans_bold</item>
     </style>
@@ -67,16 +67,16 @@
 
     <style name="SmallButtonLight">
         <item name="android:gravity">center</item>
-        <item name="android:textSize" tools:ignore="SpUsage">14dp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/brown_grey</item>
         <item name="android:fontFamily">@font/pt_sans_bold</item>
     </style>
 
     <style name="TabTitle">
         <item name="android:gravity">center</item>
-        <item name="android:textSize" tools:ignore="SpUsage">14dp</item>
+        <item name="android:textSize" tools:ignore="SpUsage">14sp</item>
         <item name="android:lineSpacingExtra">4dp</item>
-        <item name="android:textColor">@color/brown_grey</item>
+        <item name="android:textColor">@color/darker_browngrey</item>
         <item name="android:fontFamily">@font/pt_sans</item>
     </style>
 
@@ -89,7 +89,7 @@
 
     <style name="ButtonSmallPrmary">
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:textSize" tools:ignore="SpUsage">14dp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/pt_sans_bold</item>
     </style>
@@ -101,7 +101,7 @@
     </style>
 
     <style name="TitleTextField">
-        <item name="android:textSize" tools:ignore="SpUsage">14dp</item>
+        <item name="android:textSize" tools:ignore="SpUsage">14sp</item>
         <item name="android:lineSpacingExtra">4dp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">@font/pt_sans</item>
@@ -122,9 +122,9 @@
     </style>
 
     <style name="BottomSheetDesc">
-        <item name="android:textSize" tools:ignore="SpUsage">16dp</item>
-        <item name="android:lineSpacingExtra">4dp</item>
-        <item name="android:textColor">@color/brown_grey</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/darker_browngrey</item>
         <item name="android:fontFamily">@font/pt_sans</item>
     </style>
 
@@ -150,20 +150,20 @@
     </style>
 
     <style name="SubtitleBlackRegular">
-        <item name="android:textSize" tools:ignore="SpUsage">14dp</item>
+        <item name="android:textSize" tools:ignore="SpUsage">14sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">@font/pt_sans</item>
     </style>
 
     <style name="PtSansRegular5ls12dp">
-        <item name="android:textSize" tools:ignore="SpUsage">12dp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">5dp</item>
-        <item name="android:textColor">@color/brown_grey</item>
+        <item name="android:textColor">@color/darker_browngrey</item>
         <item name="android:fontFamily">@font/pt_sans</item>
     </style>
 
     <style name="PtSansRegular5ls24dp">
-        <item name="android:textSize" tools:ignore="SpUsage">24dp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:lineSpacingExtra">5dp</item>
         <item name="android:textColor">@color/brown_grey</item>
         <item name="android:fontFamily">@font/pt_sans</item>
@@ -185,7 +185,7 @@
 
     <style name="TagUnactive">
         <item name="android:gravity">center</item>
-        <item name="android:textSize" tools:ignore="SpUsage">12dp</item>
+        <item name="android:textSize" tools:ignore="SpUsage">12sp</item>
         <item name="android:lineSpacingExtra">7dp</item>
         <item name="android:letterSpacing">0.12</item>
         <item name="android:textColor">@color/greyish_brown</item>
@@ -308,7 +308,7 @@
     </style>
 
     <style name="Regular20.PinkishRed">
-        <item name="android:textSize" tools:ignore="SpUsage">20dp</item>
+        <item name="android:textSize" tools:ignore="SpUsage">20sp</item>
         <item name="android:textColor">@color/pinkish_red</item>
     </style>
 
@@ -411,8 +411,8 @@
     </style>
 
     <style name="Clickable.DialogClose">
-        <item name="android:layout_width">40dp</item>
-        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
         <item name="android:padding">8dp</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">false</item>

@@ -164,7 +164,7 @@ fun String.toDate(dateFormat: String = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timeZone:
     return parser.parse(this)
 }
 
-fun Date.getFormattedDateString(): String? {
+fun Date.getFormattedDateString(): String {
     val nowTime = Calendar.getInstance()
     val neededTime = Calendar.getInstance()
     neededTime.timeInMillis = this.time

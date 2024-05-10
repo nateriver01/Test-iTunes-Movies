@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".modules.movies.moviessearch.MoviesSearchActivity">
+    tools:context=".modules.movies.moviessearch.MoviesSearchActivity"
+    tools:ignore="VisualLintBounds">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_moviessearch_header"
@@ -31,18 +32,20 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_moviessearch_search_title"
-                style="@style/PtSansRegular5ls12dp"
+                style="@style/PtSansRegular5ls24dp"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="48dp"
                 android:background="@null"
                 android:focusable="true"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
+                android:hint="@string/input_movie_title_to_search"
                 android:maxLines="1"
                 android:paddingStart="10dp"
                 android:paddingTop="11dp"
                 android:paddingEnd="10dp"
-                android:paddingBottom="11dp" />
+                android:paddingBottom="11dp"
+                tools:ignore="VisualLintTextFieldSize" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView

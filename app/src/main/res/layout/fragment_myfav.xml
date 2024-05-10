@@ -28,31 +28,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="My Reward"
+                android:text="@string/my_favourite"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/iv_myfavlist_history"
-                style="@style/Clickable.Back"
-                android:layout_marginEnd="20dp"
-                android:padding="6dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_history" />
-
-            <ImageView
-                android:id="@+id/iv_myfavlist_reddot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="3dp"
-                android:visibility="invisible"
-                app:layout_constraintEnd_toEndOf="@+id/iv_myfavlist_history"
-                app:layout_constraintTop_toTopOf="@+id/iv_myfavlist_history"
-                app:srcCompat="@drawable/ic_reddot" />
 
             <View
                 android:layout_width="wrap_content"

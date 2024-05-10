@@ -15,6 +15,5 @@ interface MyFavContract {
         fun onFailOrderCount()
     }
 
-    interface Presenter  {
-    }
+    interface Presenter
 }

@@ -51,10 +51,11 @@
                 android:layout_weight="1"
                 android:background="@drawable/bg_rounded3_white_stroke_browngrey"
                 android:minHeight="0dp"
-                android:paddingTop="7dp"
-                android:paddingBottom="7dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
                 android:text="@string/cancel"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                tools:ignore="VisualLintButtonSize" />
 
             <Button
                 android:id="@+id/btn_dialog_positive"
@@ -66,10 +67,11 @@
                 android:layout_weight="1"
                 android:background="@drawable/bg_rounded3_duskblue"
                 android:minHeight="0dp"
-                android:paddingTop="7dp"
-                android:paddingBottom="7dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
                 android:text="@string/confirmation"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                tools:ignore="VisualLintButtonSize" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

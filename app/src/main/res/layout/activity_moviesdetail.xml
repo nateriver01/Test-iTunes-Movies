@@ -42,11 +42,13 @@
                         android:layout_height="180dp"
                         android:layout_centerInParent="true"
                         android:adjustViewBounds="true"
+                        android:contentDescription="@string/banner_image"
                         android:scaleType="centerCrop"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/img_moviesitem_placeholder" />
+                        app:srcCompat="@drawable/img_moviesitem_placeholder"
+                        tools:ignore="ImageContrastCheck" />
 
                     <View
                         android:layout_width="match_parent"
@@ -93,7 +95,7 @@
                             android:layout_marginEnd="16dp"
                             android:gravity="center_vertical"
                             android:maxLines="1"
-                            tools:text="Astra Loyalty"
+                            tools:text="iTunes Movies"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -106,27 +108,6 @@
         </com.google.android.material.appbar.AppBarLayout>
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_moviesdetail_merchant"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginEnd="20dp"
-            android:elevation="2dp"
-            app:cardCornerRadius="35dp"
-            app:layout_anchor="@id/abl_moviesdetail_banner"
-            app:layout_anchorGravity="bottom|end"
-            app:layout_constraintBottom_toTopOf="@+id/tv_moviesdetail_title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
-
-            <ImageView
-                android:id="@+id/iv_moviesdetail_merchant"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"/>
-        </androidx.cardview.widget.CardView>
 
 
         <androidx.core.widget.NestedScrollView
@@ -163,10 +144,10 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:text="Diskon 35%  Hingga Rp. 100.000 Pizza Hut, Sunter" />
+                        tools:text="Movie Title" />
 
                     <TextView
-                        android:id="@+id/tv_moviesdetail_expdate"
+                        android:id="@+id/tv_moviesdetail_artistname"
                         style="@style/SubtitleBlackRegular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -174,21 +155,7 @@
                         app:layout_constraintBottom_toBottomOf="@+id/cl_moviesdetail_item_points"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/cl_moviesdetail_item_points"
-                        tools:text="Tersedia hingga \n 20 Sep 2019" />
-
-                    <ImageView
-                        android:id="@+id/iv_moviesdetail_mypoint"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginEnd="46dp"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitStart"
-                        app:layout_constraintBottom_toBottomOf="@+id/tv_moviesdetail_subtitle"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/tv_moviesdetail_subtitle"
-                        app:layout_constraintTop_toTopOf="@+id/tv_moviesdetail_subtitle"
-                        app:srcCompat="@drawable/ic_astrakupoint" />
+                        tools:text="Artis Name" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_moviesdetail_item_points"
@@ -198,7 +165,7 @@
                         android:layout_marginBottom="18dp"
                         app:layout_constraintBottom_toTopOf="@+id/view_border1"
                         app:layout_constraintStart_toStartOf="@+id/tv_moviesdetail_subtitle"
-                        app:layout_constraintTop_toBottomOf="@+id/iv_moviesdetail_mypoint"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_moviesdetail_subtitle"
                         app:layout_constraintVertical_bias="0.0">
 
                         <ImageView
@@ -206,6 +173,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:scaleType="fitCenter"
+                            android:contentDescription="@string/icon_price"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/ic_point" />
@@ -216,12 +184,12 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/pt_sans_bold"
                             android:textColor="@color/black"
-                            android:textSize="14dp"
+                            android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/iv_moviesdetail_item_points"
                             app:layout_constraintTop_toTopOf="@+id/iv_moviesdetail_item_points"
-                            tools:text="3.400 Points"
-                            tools:ignore="SpUsage" />
+                            tools:ignore="SpUsage"
+                            tools:text="3.400 Points" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
@@ -230,7 +198,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="test track name"
+                        android:text="@string/genre_description"
+                        android:contentDescription="@string/genre_description"
                         app:layout_constraintStart_toStartOf="@+id/tv_moviesdetail_title"
                         app:layout_constraintTop_toBottomOf="@+id/tv_moviesdetail_title" />
 
@@ -269,6 +238,7 @@
 
                         <ImageView
                             android:id="@+id/iv_moviesdetail_dropdown_desc"
+                            android:contentDescription="@string/dropdown_detail_menu_description"
                             android:layout_width="14dp"
                             android:layout_height="7dp"
                             android:layout_marginEnd="4dp"
@@ -286,96 +256,28 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <!--in case need for example-->
-                    <WebView
-                        android:id="@+id/tv_moviesdetail_deskripsi_content"
+
+                    <TextView
+                        android:id="@+id/tv_bannerdetail_deskripsi_content"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="16dp"
+                        app:layout_constraintBottom_toTopOf="@+id/view_border2"
                         app:layout_constraintEnd_toEndOf="@+id/cl_moviesdetail_desc_header"
                         app:layout_constraintStart_toStartOf="@+id/cl_moviesdetail_desc_header"
-                        app:layout_constraintTop_toBottomOf="@+id/cl_moviesdetail_desc_header" />
+                        app:layout_constraintTop_toBottomOf="@+id/cl_moviesdetail_desc_header"
+                        app:layout_constraintVertical_bias="0.0" />
 
                     <View
                         android:id="@+id/view_border2"
                         android:layout_width="wrap_content"
                         android:layout_height="5dp"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/very_light_pink"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_moviesdetail_deskripsi_content" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/cl_moviesdetail_tnc"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    app:layout_constraintEnd_toEndOf="@+id/cl_moviesdetail_desc"
-                    app:layout_constraintStart_toStartOf="@+id/cl_moviesdetail_desc"
-                    app:layout_constraintTop_toBottomOf="@+id/cl_moviesdetail_desc">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/cl_moviesdetail_tnc_header"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="21dp"
-                        android:layout_marginBottom="20dp"
-                        app:layout_constraintBottom_toTopOf="@id/view_border3"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0">
-
-                        <TextView
-                            android:id="@+id/tv_moviesdetail_tnc_title"
-                            style="@style/TitleProduct"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="test 3"
-                            app:layout_constraintBottom_toBottomOf="@+id/cl_moviesdetail_tnc_header"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <ImageView
-                            android:id="@+id/iv_moviesdetail_dropdown_tnc"
-                            android:layout_width="14dp"
-                            android:layout_height="7dp"
-                            android:layout_marginEnd="4dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/tv_moviesdetail_tnc_title"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/tv_moviesdetail_tnc_title"
-                            app:srcCompat="@drawable/ic_dropdown" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                    <WebView
-                        android:id="@+id/tv_moviesdetail_tnc_content"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginBottom="16dp"
-                        android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@+id/view_border3"
-                        app:layout_constraintEnd_toEndOf="@+id/cl_moviesdetail_tnc_header"
-                        app:layout_constraintStart_toStartOf="@+id/cl_moviesdetail_tnc_header"
-                        app:layout_constraintTop_toBottomOf="@+id/cl_moviesdetail_tnc_header"
-                        app:layout_constraintVertical_bias="0.0" />
-
-                    <View
-                        android:id="@+id/view_border3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="5dp"
                         android:background="@color/very_light_pink"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -383,74 +285,6 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/cl_moviesdetail_tnc"
-                    app:layout_constraintTop_toBottomOf="@+id/cl_moviesdetail_tnc">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/cl_moviesdetail_howtouse_header"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="21dp"
-                        android:layout_marginBottom="20dp"
-                        app:layout_constraintBottom_toTopOf="@id/view_border4"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0">
-
-                        <TextView
-                            android:id="@+id/tv_moviesdetail_howtouse_title"
-                            style="@style/TitleProduct"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="test 4"
-                            app:layout_constraintBottom_toBottomOf="@+id/cl_moviesdetail_howtouse_header"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <ImageView
-                            android:id="@+id/iv_moviesdetail_dropdown_howtouse"
-                            android:layout_width="14dp"
-                            android:layout_height="7dp"
-                            android:layout_marginEnd="4dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/tv_moviesdetail_howtouse_title"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/tv_moviesdetail_howtouse_title"
-                            app:srcCompat="@drawable/ic_dropdown" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <WebView
-                        android:id="@+id/tv_moviesdetail_howtouse_content"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginBottom="16dp"
-                        android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@+id/view_border4"
-                        app:layout_constraintEnd_toEndOf="@+id/cl_moviesdetail_howtouse_header"
-                        app:layout_constraintStart_toStartOf="@+id/cl_moviesdetail_howtouse_header"
-                        app:layout_constraintTop_toBottomOf="@+id/cl_moviesdetail_howtouse_header"
-                        app:layout_constraintVertical_bias="0.0" />
-
-                    <View
-                        android:id="@+id/view_border4"
-                        android:layout_width="0dp"
-                        android:layout_height="5dp"
-                        android:background="@color/very_light_pink"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
 
@@ -469,8 +303,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cv_moviesdetail_back"
         style="@style/Clickable"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="17dp"
         android:layout_marginTop="17dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -481,6 +315,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_circle_black70"
+            android:contentDescription="@string/back_button_to_list"
             android:foregroundGravity="center_vertical"
             android:paddingStart="7dp"
             android:paddingTop="8dp"
@@ -490,7 +325,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_back_white" />
+            app:srcCompat="@drawable/ic_back_white"
+            tools:ignore="RedundantDescriptionCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -502,40 +338,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            style="@style/SubtitleBlackBold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:text="test 5"
-            app:layout_constraintBottom_toTopOf="@+id/btn_moviesdetail_submit"
-            app:layout_constraintStart_toStartOf="@+id/btn_moviesdetail_submit"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/iv_moviesdetail_userpoints"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:adjustViewBounds="true"
-            app:layout_constraintBottom_toTopOf="@+id/btn_moviesdetail_submit"
-            app:layout_constraintEnd_toStartOf="@+id/tv_moviesdetail_userpoint_point"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_point" />
-
-        <TextView
-            android:id="@+id/tv_moviesdetail_userpoint_point"
-            style="@style/SubtitleBlackBold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_moviesdetail_userpoints"
-            app:layout_constraintEnd_toEndOf="@+id/btn_moviesdetail_submit"
-            app:layout_constraintTop_toTopOf="@+id/iv_moviesdetail_userpoints"
-            app:layout_constraintVertical_bias="1.0"
-            tools:text="3.400 Points" />
 
         <Button
             android:id="@+id/btn_moviesdetail_submit"
@@ -543,18 +345,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="17dp"
+            android:layout_marginTop="18dp"
             android:layout_marginEnd="17dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="18dp"
             android:background="@drawable/bg_rounded8_dusk_blue"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            android:paddingTop="11dp"
-            android:paddingBottom="11dp"
-            android:text="test 6"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:text="@string/test_6"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="VisualLintButtonSize" />
 
         <com.github.ybq.android.spinkit.SpinKitView
             android:id="@+id/spin_kit"
