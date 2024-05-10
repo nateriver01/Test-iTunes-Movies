@@ -32,15 +32,11 @@ object AppConstants {
     val BASE_URL = appUrl(environmentStage)
     val PREF_NAME: String = getPreferenceName(environmentStage)
 
-    const val CATALOG_SEARCH = 101
+
     const val PRODUCT_CATALOG_ID = "PRODUCT_CATALOG_ID"
     const val FILTER_PRODUCT_TITLE = "FILTER_PRODUCT_TITLE"
 
     const val PREF_SEARCHHISTORY = "PREF_SEARCHHISTORY"
 
-    val HOST_NAME = hostName(environmentStage)
-    val DB_PASSWORD  = dbPassword(environmentStage)
-    val SHARED_PREFERENCE_PASSWORD = getSharedPreferencePassword(environmentStage)
-    val DB_NAME = getDbName(environmentStage)
 
 }

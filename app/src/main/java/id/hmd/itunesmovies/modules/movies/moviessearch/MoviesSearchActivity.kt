@@ -55,13 +55,8 @@ class MoviesSearchActivity : BaseActivity(), MoviesSearchContract.View, View.OnC
     private lateinit var mPresenter: MoviesSearchContract.Presenter
 
     override fun onBindView() {
-        getBundle()
         initView()
         initData()
-    }
-
-    private fun getBundle(){
-
     }
 
     private fun initView() {
@@ -134,7 +129,7 @@ class MoviesSearchActivity : BaseActivity(), MoviesSearchContract.View, View.OnC
                             getProductData(searchText)
                         }
                     }
-                } else if (searchText.length == 0) {
+                } else if (searchText.isEmpty()) {
                     listProduct.clear()
                     productAdapter.notifyDataSetChanged()
                     /*if(!listHistoryProduct.isNullOrEmpty()){
@@ -149,7 +144,7 @@ class MoviesSearchActivity : BaseActivity(), MoviesSearchContract.View, View.OnC
 
         })
 
-        edtSearch.setOnEditorActionListener { view, actionId, keyEvent ->
+        edtSearch.setOnEditorActionListener { view, actionId, _ ->
             return@setOnEditorActionListener when (actionId) {
                 EditorInfo.IME_ACTION_SEARCH -> {
                     runOnUiThread {
@@ -220,10 +215,6 @@ class MoviesSearchActivity : BaseActivity(), MoviesSearchContract.View, View.OnC
         listProduct.clear()
         listProduct.addAll(moviesList)
         productAdapter.notifyDataSetChanged()
-    }
-
-    override fun onFailSearchProduct() {
-
     }
 
     @SuppressLint("NotifyDataSetChanged")

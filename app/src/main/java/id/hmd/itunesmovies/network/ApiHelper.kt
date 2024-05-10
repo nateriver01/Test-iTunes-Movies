@@ -1,21 +1,18 @@
 package id.hmd.itunesmovies.network
 
 import android.content.Context
-import android.util.Log
-import id.hmd.itunesmovies.di.ApiModule
-import id.hmd.itunesmovies.di.ServiceModule
-import id.hmd.itunesmovies.utils.AppConstants
 import com.google.gson.Gson
+import id.hmd.itunesmovies.di.ApiModule
 import id.hmd.itunesmovies.di.DaggerApiComponent
+import id.hmd.itunesmovies.di.ServiceModule
 import id.hmd.itunesmovies.model.response.MoviesListResponse
+import id.hmd.itunesmovies.utils.AppConstants
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.observers.DisposableObserver
 import io.reactivex.rxjava3.schedulers.Schedulers
 import timber.log.Timber
 import java.io.IOException
-
 import javax.inject.Inject
-
 
 
 class ApiHelper

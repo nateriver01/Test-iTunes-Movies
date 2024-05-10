@@ -1,3 +1,5 @@
+@file:Suppress("SameParameterValue")
+
 package id.hmd.itunesmovies.base
 
 import android.content.SharedPreferences
@@ -21,6 +23,7 @@ import java.io.IOException
 import javax.inject.Inject
 
 
+@Suppress("SameParameterValue")
 abstract class BaseActivity: AppCompatActivity(), BaseView {
 
     @Inject
@@ -56,14 +59,6 @@ abstract class BaseActivity: AppCompatActivity(), BaseView {
         initExceptionHandler()
 
         onBindView()
-    }
-
-    override fun showLoading() {
-
-    }
-
-    override fun dismissLoading() {
-
     }
 
     override fun showInetError() {

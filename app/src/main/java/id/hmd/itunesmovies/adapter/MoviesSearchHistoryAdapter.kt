@@ -3,7 +3,6 @@ package id.hmd.itunesmovies.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import id.hmd.itunesmovies.R
 import id.hmd.itunesmovies.databinding.ItemMoviessearchBinding
 
 class MoviesSearchHistoryAdapter (
@@ -37,7 +36,7 @@ class MoviesSearchHistoryAdapter (
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(mdatas.get(position))
+        holder.bind(mdatas[position])
     }
 
 }

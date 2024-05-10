@@ -37,7 +37,7 @@ class MoviesSearchAdapter (
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(mdatas.get(position))
+        holder.bind(mdatas[position])
     }
 
 }

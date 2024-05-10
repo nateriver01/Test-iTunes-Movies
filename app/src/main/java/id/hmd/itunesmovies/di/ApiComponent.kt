@@ -1,12 +1,11 @@
 package id.hmd.itunesmovies.di
 
-import androidx.viewbinding.ViewBinding
+//import com.google.firebase.messaging.FirebaseMessagingService
+
+import dagger.Component
 import id.hmd.itunesmovies.base.BaseActivity
 import id.hmd.itunesmovies.base.BaseFragment
 import id.hmd.itunesmovies.network.ApiHelper
-//import com.google.firebase.messaging.FirebaseMessagingService
-import dagger.Component
-
 import javax.inject.Singleton
 
 /**
@@ -14,7 +13,7 @@ import javax.inject.Singleton
  */
 
 @Singleton
-@Component(modules = arrayOf(ApiModule::class, ServiceModule::class))
+@Component(modules = [ApiModule::class, ServiceModule::class])
 interface ApiComponent {
     fun inject(apiHelper: ApiHelper)
     fun inject(activity: BaseActivity)

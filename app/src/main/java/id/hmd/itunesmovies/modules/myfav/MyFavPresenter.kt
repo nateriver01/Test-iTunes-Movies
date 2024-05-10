@@ -1,6 +1,5 @@
 package id.hmd.itunesmovies.modules.myfav
 
-import android.util.Log
 import id.hmd.itunesmovies.base.BasePresenter
 
 /**

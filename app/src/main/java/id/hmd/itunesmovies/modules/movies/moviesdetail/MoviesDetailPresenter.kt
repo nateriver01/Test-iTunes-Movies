@@ -9,13 +9,5 @@ import id.hmd.itunesmovies.base.BasePresenter
 class MoviesDetailPresenter(private val view: MoviesDetailContract.View) : BasePresenter(),
     MoviesDetailContract.Presenter {
 
-    override fun getProduct() {
-
-    }
-
-
-
-
-
 
 }

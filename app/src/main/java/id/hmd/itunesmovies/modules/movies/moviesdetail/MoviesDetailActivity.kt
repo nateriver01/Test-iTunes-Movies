@@ -75,11 +75,9 @@ class MoviesDetailActivity : BaseActivity(), MoviesDetailContract.View {
         nsvMoviesDetail = binding.nscvMoviesdetail
         shimmerLoad(true)
 
-        initDialog()
-
         setSupportActionBar(toolbar)
 
-        tvUserPoints.text = userPoints+" Points"
+        tvUserPoints.text = "$userPoints Points"
 
         binding.ablMoviesdetailBanner.addOnOffsetChangedListener { appBarLayout, _ ->
             val offsetAlpha: Float = appBarLayout.y / binding.ablMoviesdetailBanner.totalScrollRange
@@ -138,11 +136,6 @@ class MoviesDetailActivity : BaseActivity(), MoviesDetailContract.View {
 
         shimmerLoad(false)
 
-
-    }
-
-    @SuppressLint("InflateParams")
-    private fun initDialog(){
 
     }
 

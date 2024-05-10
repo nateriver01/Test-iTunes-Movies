@@ -8,7 +8,6 @@ interface MoviesSearchContract {
     interface View : BaseView {
         fun onGetHistoryData(productList: List<String>?)
         fun onSuccessSearchProduct(moviesList : List<ResultsItem>)
-        fun onFailSearchProduct()
         fun onDeleteAllHistory()
     }
 

@@ -12,7 +12,7 @@ import id.hmd.itunesmovies.databinding.ItemMyfavlistBinding
 import id.hmd.itunesmovies.model.response.ResultsItem
 import id.hmd.itunesmovies.utils.Helpers
 
-class MyFavListAdapter(val obj: List<ResultsItem>) :
+class MyFavListAdapter(private val obj: List<ResultsItem>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val TYPECONTENT = 1
@@ -66,7 +66,7 @@ class MyFavListAdapter(val obj: List<ResultsItem>) :
     }
 
     override fun getItemViewType(position: Int): Int {
-        if (obj.get(position).isLoading)
+        if (obj[position].isLoading)
             return TYPELOADING
         else
             return TYPECONTENT
@@ -74,7 +74,7 @@ class MyFavListAdapter(val obj: List<ResultsItem>) :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (getItemViewType(position) != TYPELOADING)
-            (holder as ContentViewHolder).bind(obj.get(position), holder.itemView.context)
+            (holder as ContentViewHolder).bind(obj[position], holder.itemView.context)
     }
 
     interface OnItemClick {

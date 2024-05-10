@@ -62,10 +62,10 @@ object Helpers {
     }
 
     val emojiFilter = InputFilter{
-            source: CharSequence, start: Int, end: Int, spanned: Spanned, i2: Int, i3: Int ->
+            source: CharSequence, start: Int, end: Int, _: Spanned, _: Int, _: Int ->
 
         for(i in start until end){
-            val type  = Character.getType(source.get(i))
+            val type  = Character.getType(source[i])
             if(type==Character.SURROGATE.toInt()||type==Character.OTHER_SYMBOL.toInt()){
                 return@InputFilter ""
             }

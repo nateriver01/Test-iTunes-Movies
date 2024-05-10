@@ -27,7 +27,7 @@ abstract class EndlessRecyclerViewScrollListener(private var visibleThreshold: I
         this.visibleThreshold = visibleThreshold * layoutManager.spanCount
     }
 
-    fun getLastVisibleItem(lastVisibleItemPositions: IntArray): Int {
+    private fun getLastVisibleItem(lastVisibleItemPositions: IntArray): Int {
         var maxSize = 0
         for (i in lastVisibleItemPositions.indices) {
             if (i == 0) {
@@ -43,13 +43,19 @@ abstract class EndlessRecyclerViewScrollListener(private var visibleThreshold: I
         var lastVisibleItemPosition = 0
         val totalItemCount = mLayoutManager?.itemCount ?: 0
 
-        if (mLayoutManager is StaggeredGridLayoutManager) {
-            val lastVisibleItemPositions = (mLayoutManager as StaggeredGridLayoutManager).findLastVisibleItemPositions(null)
-            lastVisibleItemPosition = getLastVisibleItem(lastVisibleItemPositions)
-        } else if (mLayoutManager is GridLayoutManager) {
-            lastVisibleItemPosition = (mLayoutManager as GridLayoutManager).findLastVisibleItemPosition()
-        } else if (mLayoutManager is LinearLayoutManager) {
-            lastVisibleItemPosition = (mLayoutManager as LinearLayoutManager).findLastVisibleItemPosition()
+        when (mLayoutManager) {
+            is StaggeredGridLayoutManager -> {
+                val lastVisibleItemPositions = (mLayoutManager as StaggeredGridLayoutManager).findLastVisibleItemPositions(null)
+                lastVisibleItemPosition = getLastVisibleItem(lastVisibleItemPositions)
+            }
+
+            is GridLayoutManager -> {
+                lastVisibleItemPosition = (mLayoutManager as GridLayoutManager).findLastVisibleItemPosition()
+            }
+
+            is LinearLayoutManager -> {
+                lastVisibleItemPosition = (mLayoutManager as LinearLayoutManager).findLastVisibleItemPosition()
+            }
         }
 
         if (totalItemCount < previousTotalItemCount) {

@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 
 
 
-class LocalPreferences (var sharedPreference: SharedPreferences) {
+class LocalPreferences (private var sharedPreference: SharedPreferences) {
 
     fun savePrefrencesByPrefix(prefkey: String, datas: List<String>){
         val temp = ArrayList<String>()

@@ -4,11 +4,7 @@
 
     <dimen name="design_fab_image_size" tools:override="true">70dp</dimen>
 
-    <integer name="transition_duration">150</integer>
-
     <dimen name="dimen16dp">16dp</dimen>
     <dimen name="dimen20dp">20dp</dimen>
-    <dimen name="dimen40dp">40dp</dimen>
 
-    <dimen name="profile_barcodethumb">72dp</dimen>
 </resources>

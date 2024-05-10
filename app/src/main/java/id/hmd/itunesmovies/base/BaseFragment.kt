@@ -85,17 +85,9 @@ abstract class BaseFragment: Fragment(), BaseView{
         onBindView()
     }
 
-    override fun showLoading() {
-
-    }
-
-    override fun dismissLoading() {
-
-    }
-
     override fun showInetError() {
         if(::bottsheetOffline.isInitialized){
-            if(iTunesMoviesApp.isOfflineShowing == false){
+            if(!iTunesMoviesApp.isOfflineShowing){
                 if(activity!=null) bottsheetOffline.show()
             }
         }

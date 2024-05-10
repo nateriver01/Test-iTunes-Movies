@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
     <!--Transparent-->
     <color name="whiteTransparent">#00FFFFFF</color>
     <color name="blackTransparent">#00000000</color>
@@ -15,25 +12,20 @@
 
     <!--Blue-->
     <color name="dusk_blue">#1F437A</color>
-    <color name="very_light_blue">#e4e9f2</color>
-    <color name="bluish">#1C75BC</color>
-    <color name="light_blue">#F2F7FF</color>
     <color name="skeleton">#EEF2F6</color>
 
     <!--Red-->
     <color name="pinkish_red">#E52A34</color>
-    <color name="red_points">#ff3f3f</color>
 
     <!--Gray-->
-    <color name="pale_grey">#E7F0FF</color>
     <color name="brown_grey">#888888</color>
     <color name="darker_browngrey">#757575</color>>
     <color name="very_light_pink">#EEEEEE</color>
-    <color name="greyish_brown">#4A4A4A</color>
 
 
-    <color name="gold">#E4B110</color>
-    <color name="darker_gold">#EF6C00</color>>
+    <color name="gold">#E4B110</color><![CDATA[
+    >
+    ]]>
     <color name="white">#FFFFFF</color>
     <color name="grey">#a9a9a9</color>
 

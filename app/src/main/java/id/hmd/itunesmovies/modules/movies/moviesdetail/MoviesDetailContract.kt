@@ -15,6 +15,5 @@ interface MoviesDetailContract {
     }
 
     interface Presenter  {
-        fun getProduct()
     }
 }
