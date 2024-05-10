@@ -262,7 +262,7 @@
                     <!--in case need for example-->
 
                     <TextView
-                        android:id="@+id/tv_bannerdetail_deskripsi_content"
+                        android:id="@+id/tv_moviesdetail_deskripsi_content"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"

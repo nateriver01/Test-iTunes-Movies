@@ -56,3 +56,11 @@ fun View.toggleRotation(isExpand:Boolean) {
         animate().rotation(-180f).start()
     }
 }
+
+fun View.toggleVisibility() {
+    if (visibility == View.VISIBLE) {
+        visibility = View.GONE
+    } else {
+        visibility = View.VISIBLE
+    }
+}

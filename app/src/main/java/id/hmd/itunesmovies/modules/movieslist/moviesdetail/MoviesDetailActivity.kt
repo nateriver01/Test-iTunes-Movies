@@ -34,7 +34,6 @@ class MoviesDetailActivity : BaseActivity(), MoviesDetailContract.View {
     private var productId: String = ""
     private var product:ResultsItem= ResultsItem()
     private lateinit var ivBanner:ImageView
-    private lateinit var ivMerchant:ImageView
     private lateinit var toolbar: Toolbar
     private lateinit var toolbarTitle: TextView
     private lateinit var tvUserPoints: TextView
@@ -46,7 +45,6 @@ class MoviesDetailActivity : BaseActivity(), MoviesDetailContract.View {
     private var userPoints = "0"
     private var productPrice = "0"
     private var productName = ""
-    private var productExpDate = "1 Januari 2021"
 
     private lateinit var mBottomSheetnotSufficient: BottomSheetDialog
 
@@ -74,8 +72,6 @@ class MoviesDetailActivity : BaseActivity(), MoviesDetailContract.View {
     @SuppressLint("SetTextI18n")
     private fun initLayout(){
         ivBanner = binding.ivMoviesdetailBanner
-        ivMerchant = binding.ivMoviesdetailMerchant
-        tvUserPoints = binding.tvMoviesdetailUserpointPoint
         binding.ivMoviesdetailDropdownDesc.rotation=-180f
         toolbar = binding.tbrMoviesdetail
         toolbarTitle = binding.tvMoviesdetailTitle
@@ -89,12 +85,11 @@ class MoviesDetailActivity : BaseActivity(), MoviesDetailContract.View {
 
         tvUserPoints.text = userPoints+" Points"
 
-        binding.ablMoviesdetailBanner.addOnOffsetChangedListener({ appBarLayout, _ ->
+        binding.ablMoviesdetailBanner.addOnOffsetChangedListener { appBarLayout, _ ->
             val offsetAlpha: Float = appBarLayout.y / binding.ablMoviesdetailBanner.totalScrollRange
             binding.tvMoviesdetailToolbartitle.alpha = 0 + offsetAlpha * -1
-            binding.cvMoviesdetailMerchant.alpha = 1 - offsetAlpha * -1
             binding.view5.alpha = 0 + offsetAlpha * -1
-        })
+        }
 
     }
 
@@ -109,19 +104,6 @@ class MoviesDetailActivity : BaseActivity(), MoviesDetailContract.View {
             binding.tvMoviesdetailDeskripsiContent.toggleVisibility()
             binding.ivMoviesdetailDropdownDesc.toggleRotation(isExpand[0])
             isExpand[0] = !isExpand[0]
-        }
-        binding.clMoviesdetailTncHeader.setOnClickListener{
-
-            binding.tvMoviesdetailTncContent.toggleVisibility()
-            binding.ivMoviesdetailDropdownTnc.toggleRotation(isExpand[1])
-            isExpand[1] = !isExpand[1]
-        }
-
-        binding.clMoviesdetailHowtouseHeader.setOnClickListener{
-
-            binding.tvMoviesdetailHowtouseContent.toggleVisibility()
-            binding.ivMoviesdetailDropdownHowtouse.toggleRotation(isExpand[2])
-            isExpand[2] = !isExpand[2]
         }
 
         binding.btnMoviesdetailSubmit.setOnClickListener {
@@ -139,9 +121,6 @@ class MoviesDetailActivity : BaseActivity(), MoviesDetailContract.View {
         binding.tvMoviesdetailToolbartitle.text = productName
         binding.tvMoviesdetailTitle.text = productName
         binding.tvMoviesdetailItemPoints.text = productPrice+" ${product.currency}"
-
-        binding.tvMoviesdetailDeskripsiContent.loadData(product.longDescription,"text/html","UTF-8")
-
 
         val imageItem = product.artworkUrl100
 

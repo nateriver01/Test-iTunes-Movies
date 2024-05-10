@@ -1,8 +1,6 @@
 package id.hmd.itunesmovies.modules.myfav
 
 import android.os.Bundle
-import android.os.Handler
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -20,6 +18,7 @@ import id.hmd.itunesmovies.modules.movies.moviesdetail.MoviesDetailActivity
 import id.hmd.itunesmovies.utils.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 /**
@@ -65,8 +64,6 @@ class MyFavFragment : BaseFragment(), MyFavContract.View, MyFavListAdapter.OnIte
     private fun initLayout() {
         srlMyFavList = binding.srlMyfavlist
         rvMyFavList = binding.rvMyfavlistList
-        ivBtnHistory = binding.ivMyfavlistHistory
-        ivReddot = binding.ivMyfavlistReddot
         layoutMyFavEmpty = binding.layoutNotfoundMyfavlist.root
         btnMyFavEmpty = binding.layoutNotfoundMyfavlist.btnEmptymyfavExchange
         shimmerMyFav = binding.layoutShimmerMyfavlist.root
@@ -88,7 +85,7 @@ class MyFavFragment : BaseFragment(), MyFavContract.View, MyFavListAdapter.OnIte
 
         scrollListener = object : EndlessRecyclerViewScrollListener(2, linearLayoutManager) {
             override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView) {
-                Log.d("TEST", "onLoadMore $page - $totalItemsCount")
+                Timber.tag("TEST").d("onLoadMore $page - $totalItemsCount")
                 insertLoadingItem()
                 hitApi(false, page)
             }
